@@ -8,24 +8,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="a2z home services by AS services" />
-	<script> 
-		addEventListener("load", function () {
-			setTimeout(hideURLbar, 0);
-		}, false);
+	 <script src= "https://smtpjs.com/v3/smtp.js"></script>
+	<script type="text/javascript"> 
+		
 
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-
-		}
-
-		function sendmsg(){
+		function sendmail(){
 		var name = document.getElementById("name").value
 		var phone = document.getElementById("phone").value
-		var email = document.getElementById("email").value
+		var senderemail = document.getElementById("email").value
 		var address = document.getElementById("address").value
 		var service = document.getElementById("service").value;
-		var data = "Name:-" + name + ",Phone no:-" + phone + ",Email id:-" + email + ",Address:-" + address + ",Service type:-" +service;
-		window.location.assign = "https://wa.me/918977998814/?text=*New Service details:==>*" + " " + data;
+		var data = "Name:-" + name + ",Phone no:-" + phone + ",Email id:-" + senderemail + ",Address:-" + address + ",Service type:-" +service;
+			Email.send({
+        Host: "smtp.gmail.com",
+        Username: "venkatesh.reddy@orchids.edu.in",
+        Password: "venki.gv143",
+        To: "venkatesh.reddy@orchids.edu.in",
+        From: senderemail,
+        Subject: "A new query from the customer regarding the A2Z services",
+        Body: "A customer has successfully submitted their query, here are their details" + data,
+       
+      })
+        .then(function (message) {
+          alert("Query has been sent successfully")
+        });
 		}
 	</script>
 	<!-- //for-mobile-apps -->
@@ -225,7 +231,7 @@
 
 								</select>
 							</div>
-							<input type="submit" value="Submit" onclick="sendmsg()">
+							<input type="submit" value="Submit" onclick="sendmail()">
 						</form>
 					</div>
 					<div class="col-md-8 banner-btm-grid2">
