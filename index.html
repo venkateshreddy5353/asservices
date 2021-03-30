@@ -16,10 +16,11 @@
         })();
     </script>
 	<script type="text/javascript"> 
+		window.onload = function() {
 		
 	const btn = document.getElementById('button');
 
-            document.getElementById('form').addEventListener('submit', function(event) {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
                 event.preventDefault();
                 btn.value = 'Sending...';
 		    const serviceID = 'service_k12vh9x';
@@ -33,6 +34,7 @@
 			alert(JSON.stringify(err));
                     });
             });
+		}
         
 	</script>
 	<!-- //for-mobile-apps -->
@@ -196,7 +198,7 @@
 							<p>We solve your Home repair needs!</p>
 							<img src="images/f1.png" alt="" />
 						</div>
-						<form id="form" class="banner_form">
+						<form id="contact-form" class="banner_form">
 							<div class="sec-left">
 								<label for="Name" class="contact-form-text">Name</label>
 								<input placeholder="your name " id="Name" name="Name" type="text" required="">
