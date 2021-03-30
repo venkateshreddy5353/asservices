@@ -18,18 +18,20 @@
 	<script type="text/javascript"> 
 		
 window.onload = function() {
+	const btn = document.getElementById('button');
+
             document.getElementById('contact-form').addEventListener('submit', function(event) {
                 event.preventDefault();
-                // generate a five digit number for the contact_number variable
-                //this.contact_number.value = Math.random() * 100000 | 0;
-                // these IDs from the previous steps
+                btn.value = 'Sending...';
 		    const serviceID = 'service_k12vh9x';
-   const templateID = 'template_rqig80p';
-                emailjs.sendForm(serviceID, templateID,'contact_service', 'contact_form', this)
-                    .then(function() {
-                        console.log('SUCCESS!');
-                    }, function(error) {
-                        console.log('FAILED...', error);
+                    const templateID = 'template_rqig80p';
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+			btn.value = 'Submit';
+			alert('Sent!');
+			}, (err) => {
+			btn.value = 'Submit';
+			alert(JSON.stringify(err));
                     });
             });
         }
@@ -205,7 +207,7 @@ window.onload = function() {
 								<input placeholder="xxx@xx.com " id="email" name="user_email" type="email" required="">
 							</div>
 							<div class="sec-left">
-								<label class="contact-form-text">Mobile no.</label>
+								<label class="contact-form-text">Mobile</label>
 								<input placeholder=" XXXXXX" id="phone" name="contact_number" type="text" required="">
 							</div>
 							<div class="form-tx">
@@ -213,7 +215,7 @@ window.onload = function() {
 								<textarea placeholder="your address" id="address" name="message" required=""></textarea>
 							</div>
 							<div class="form-select sec-right">
-								<label class="contact-form-text">Select Service</label>
+								<label class="contact-form-text">Select_Service</label>
 								<select id="service">
 									<option value="0">---- SELECT ----</option>
 									<option value="1">Electrical Service</option>
@@ -231,7 +233,7 @@ window.onload = function() {
 
 								</select>
 							</div>
-							<input type="submit" value="Submit">
+							<input type="submit" id="button" value="Submit">
 						</form>
 					</div>
 					<div class="col-md-8 banner-btm-grid2">
