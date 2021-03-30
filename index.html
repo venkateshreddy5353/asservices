@@ -17,10 +17,9 @@
     </script>
 	<script type="text/javascript"> 
 		
-window.onload = function() {
 	const btn = document.getElementById('button');
 
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
+            document.getElementById('form').addEventListener('submit', function(event) {
                 event.preventDefault();
                 btn.value = 'Sending...';
 		    const serviceID = 'service_k12vh9x';
@@ -28,13 +27,13 @@ window.onload = function() {
                 emailjs.sendForm(serviceID, templateID, this)
                     .then(() => {
 			btn.value = 'Submit';
-			alert('Sent!');
+			alert('Query has been Sent!');
 			}, (err) => {
 			btn.value = 'Submit';
 			alert(JSON.stringify(err));
                     });
             });
-        }
+        
 	</script>
 	<!-- //for-mobile-apps -->
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
@@ -197,25 +196,27 @@ window.onload = function() {
 							<p>We solve your Home repair needs!</p>
 							<img src="images/f1.png" alt="" />
 						</div>
-						<form id="contact-form" class="banner_form">
+						<form id="form" class="banner_form">
 							<div class="sec-left">
-								<label class="contact-form-text">Name</label>
+								<label for="Name" class="contact-form-text">Name</label>
 								<input placeholder="your name " id="Name" name="Name" type="text" required="">
+								
 							</div>
 							<div class="sec-right">
-								<label class="contact-form-text">Email</label>
-								<input placeholder="xxx@xx.com " id="Email" name="Email" type="email" required="">
+								<label for="Email" class="contact-form-text">Email</label>
+								<input placeholder="test@gmail.com " id="Email" name="Email" type="text" required="">
+
 							</div>
 							<div class="sec-left">
-								<label class="contact-form-text">Mobile</label>
-								<input placeholder=" XXXXXX" id="Mobile" name="Mobile" type="text" required="">
+								<label for="Mobile" class="contact-form-text">Mobile</label>
+								<input placeholder="9999999999" id="Mobile" name="Mobile" type="text" required="">
 							</div>
 							<div class="form-tx">
-								<label class="contact-form-text">Address</label>
+								<label for="Address" class="contact-form-text">Address</label>
 								<textarea placeholder="your address" id="Address" name="Address" required=""></textarea>
 							</div>
 							<div class="form-select sec-right">
-								<label class="contact-form-text">Select_Service</label>
+								<label for="Select_Service" class="contact-form-text">Select_Service</label>
 								<select id="Select_Service" name="Select_Service">
 									<option value="0">---- SELECT ----</option>
 									<option value="1">Electrical Service</option>
