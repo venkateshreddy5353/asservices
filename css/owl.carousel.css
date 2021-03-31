@@ -22,8 +22,9 @@
 .owl-theme .owl-controls .owl-buttons div{
 	color: #FFF;
 	display: inline-block;
-	zoom: 1;
-	margin: 5px;
+	transform: scale(1); /* Standard Property */
+	transform-origin: 0 0;  /* Standard Property */
+		margin: 5px;
 	padding: 3px 10px;
 	font-size: 12px;
     width: 42px;
@@ -53,8 +54,9 @@
 
 .owl-theme .owl-controls .owl-page{
 	display: inline-block;
-	zoom: 1;
-	*display: inline;/*IE7 life-saver */
+	transform: scale(1); /* Standard Property */
+	transform-origin: 0 0;  /* Standard Property */	
+	display: inline;/*IE7 life-saver */
 }
 .owl-theme .owl-controls .owl-page span{
 	display: block;
@@ -359,7 +361,8 @@
 	.owl-theme .owl-controls .owl-buttons div {
 		color: #FFF;
 		display: inline-block;
-		zoom: 1;
+		transform: scale(1); /* Standard Property */
+		transform-origin: 0 0;  /* Standard Property */		
 		margin: 5px;
 		padding: 3px 10px;
 		font-size: 12px;
