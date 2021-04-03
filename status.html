@@ -20,7 +20,7 @@
 		
 	const btn = document.getElementById('button');
 
-            document.getElementById('status-form').addEventListener('submit', function(event) {
+            document.getElementById('form').addEventListener('submit', function(event) {
                 event.preventDefault();
                 btn.value = 'Sending...';
 		    const serviceID = 'service_pmw01s6';
@@ -192,7 +192,7 @@
 					<img src="images/order.jpg" alt="" class="img-responsive" />
 				</div>
 				<div class="col-md-7 col-sm-7 register-right">
-					<form  id="status-form" class="banner_form">
+					<form id="form" class="banner_form">
 						<h6>order look up </h6>
 						<div class="sec-right">
 							<label for="Email" class="contact-form-text-status">Email</label>
