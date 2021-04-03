@@ -8,26 +8,58 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="A2Z Home services" />
-	<script>
-		addEventListener("load", function () {
-			setTimeout(hideURLbar, 0);
-		}, false);
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+	  <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/integration
+            emailjs.init('user_aNRDJ89nAw30iw9zghC1i');
+        })();
+    </script>
+	<script type="text/javascript"> 
+		window.onload = function() {
+		
+	const btn = document.getElementById('button');
 
-		function hideURLbar() {
-			window.scrollTo(0, 1);
+            document.getElementById('status-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                btn.value = 'Sending...';
+		    const serviceID = 'service_pmw01s6';
+                    const templateID = 'template_yj8fsa6';
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+			btn.value = 'Submit';
+			alert('Query has been Sent,Our support people will get in touch with you shortly!');
+			}, (err) => {
+			btn.value = 'Submit';
+			alert(JSON.stringify(err));
+                    });
+            });
 		}
-		function sendmsg(){
-		var name = document.getElementById("name").value
-		var phone = document.getElementById("phone").value
-		var email = document.getElementById("email").value
-		var address = document.getElementById("address").value
-		var service = document.getElementById("service").value
-		var place = document.getElementById("place").value
-		var plan = document.getElementById("plan").value;
-		var data = "Name:-" + name + ",Phone no:-" + phone + ",Email id:-" + email + ",Address:-" + address + ",Service type:-" +service + ",Place:-"+ place +",User Plan:-"+plan;
-		window.location.href = "https://wa.me/918977998814/?text=*New Service details:==>*" + " " + data;
-		}
+        
 	</script>
+		<script type="text/javascript"> 
+			window.onload = function() {
+			
+		const btn = document.getElementById('button');
+	
+				document.getElementById('contact-form').addEventListener('submit', function(event) {
+					event.preventDefault();
+					btn.value = 'Sending...';
+				const serviceID = 'service_pmw01s6';
+						const templateID = 'template_y8zowwa';
+					emailjs.sendForm(serviceID, templateID, this)
+						.then(() => {
+				btn.value = 'Submit';
+				alert('Query has been Sent,Our support people will get in touch with you shortly!');
+				}, (err) => {
+				btn.value = 'Submit';
+				alert(JSON.stringify(err));
+						});
+				});
+			}
+			
+		</script>
+
 
 	<!-- //for-mobile-apps -->
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
@@ -160,15 +192,15 @@
 					<img src="images/order.jpg" alt="" class="img-responsive" />
 				</div>
 				<div class="col-md-7 col-sm-7 register-right">
-					<form action="#" method="post" class="banner_form">
+					<form  id="status-form" class="banner_form">
 						<h6>order look up </h6>
 						<div class="sec-right">
-							<label class="contact-form-text-status">Email</label>
-							<input placeholder="xxx@xx.com " name="first name" type="email" required="">
+							<label for="Email" class="contact-form-text-status">Email</label>
+							<input placeholder="xxx@xx.com " name="Email" id="Email" type="Email" required="">
 						</div>
 						<div class="sec-left">
-							<label class="contact-form-text-status">Registered Mobile no.</label>
-							<input placeholder=" XXXXXX" name="first name" type="text" required="">
+							<label for="Mobile" class="contact-form-text-status">Mobile</label>
+							<input placeholder=" XXXXXX" name="Mobile" type="text" id="Mobile" required="">
 						</div>
 						<input type="submit" value="Submit">
 					</form>
@@ -191,27 +223,27 @@
 					<img src="images/girl.png" alt="" class="img-responsive" />
 				</div>
 				<div class="col-md-7  w3layouts-reg-form">
-					<form class="banner_form">
+					<form id="contact-form" class="banner_form">
 						<p>Please fill your details as mentioned below and we will call back immediatley </p>
 						<div class="sec-left">
-							<label class="contact-form-text">Name</label>
-							<input placeholder="your name " id="name" name="first name" type="text" required="">
+							<label for="Name" class="contact-form-text">Name</label>
+							<input placeholder="your name " id="Name" name="Name" type="text" required="">
 						</div>
 						<div class="sec-right">
-							<label class="contact-form-text">Email</label>
-							<input placeholder="xxx@xx.com " id="email" name="Email" type="email" required="">
+							<label for="Email" class="contact-form-text">Email</label>
+							<input placeholder="xxx@xx.com " id="Email" name="Email" type="text" required="">
 						</div>
 						<div class="sec-left">
-							<label class="contact-form-text">Mobile no.</label>
-							<input placeholder=" XXXXXX" id="phone" name="Mobile no" type="text" required="">
+							<label for="Mobile" class="contact-form-text">Mobile</label>
+							<input placeholder="9999999999" id="Mobile" name="Mobile" type="text" required="">
 						</div>
 						<div class="form-tx">
-							<label class="contact-form-text">Address</label>
-							<textarea placeholder="your address" id="address" required></textarea>
+							<label for="Address" class="contact-form-text">Address</label>
+							<textarea placeholder="your address" id="Address"  name="Address" required></textarea>
 						</div>
 						<div class="form-select sec-left">
-							<label class="contact-form-text">Select Category</label>
-							<select id="service">
+							<label for="Select_Service" class="contact-form-text">Select_Service</label>
+							<select id="Select_Service" name="Select_Service">
 								<option value="0">---- SELECT ----</option>
 								<option value="1">Electrical Service</option>
 								<option value="2">Plumbing Service</option>
@@ -227,28 +259,9 @@
 								<option value="12">Others</option>
 							</select>
 						</div>
-						<div class="form-select sec-right">
-							<label class="contact-form-text">Select Area</label>
-							<select id="place">
-								<option value="0">---- SELECT ----</option>
-								<option value="1">place1</option>
-								<option value="2">place2</option>
-								<option value="3">place3</option>
-								<option value="4">place4</option>
-								<option value="5">place5</option>
-							</select>
-						</div>
+						
 						<div class="clearfix"></div>
-						<div class="form-select">
-							<label class="contact-form-text">Select Plan</label>
-							<select id="plan">
-								<option value="0">---- SELECT ----</option>
-								<option value="1">Normal plan (free)</option>
-								<option value="2">First preference $50</option>
-								<option value="3">Second preference $38</option>
-								<option value="4">Third preference $25</option>
-							</select>
-						</div>
+					
 						<div class="wthree-text">
 							<ul>
 								<li>
@@ -260,7 +273,7 @@
 							</ul>
 							<div class="clearfix"> </div>
 						</div>
-						<input type="submit" value="Submit" onclick="sendmsg()">
+						<input type="submit" id="button" value="Submit" >
 					</form>
 
 				</div>

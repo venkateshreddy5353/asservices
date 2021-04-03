@@ -8,14 +8,34 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="A2Z Home services" />
-	<script>
-		addEventListener("load", function () {
-			setTimeout(hideURLbar, 0);
-		}, false);
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+	  <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/integration
+            emailjs.init('user_aNRDJ89nAw30iw9zghC1i');
+        })();
+    </script>
+	<script type="text/javascript"> 
+		window.onload = function() {
+		
+	const btn = document.getElementById('button');
 
-		function hideURLbar() {
-			window.scrollTo(0, 1);
+            document.getElementById('contact_form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                btn.value = 'Sending...';
+		    const serviceID = 'service_pmw01s6';
+                    const templateID = 'template_y8zowwa';
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+			btn.value = 'Submit';
+			alert('Query has been Sent,Our support people will get in touch with you shortly!');
+			}, (err) => {
+			btn.value = 'Submit';
+			alert(JSON.stringify(err));
+                    });
+            });
 		}
+        
 	</script>
 	<!-- //for-mobile-apps -->
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
@@ -150,30 +170,29 @@
 						<p>Door No:3-69,Near Water Tank,Rameswaram Road,Madhavapatnam,Kakinada Bazaar,Kakinada - 533001.</p>
 					</div>
 					<div class="contact-bottom">
-						<iframe src="https://maps.google.com/maps?q=16.9887891,82.2047711" 
-						    style="border:0" allowfullscreen></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d567.2024907943585!2d82.20774775348046!3d16.99085715217283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37878444ecc3c3%3A0x686c913b50e694f6!2sJesus%20Christ%20Prayer%20House!5e0!3m2!1sen!2sin!4v1617483103589!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 					</div>
 				</div>
 				<div class="col-md-6 w3layouts-reg-form contact-form-row-agileinfo">
 					<h4 class="form-con-txt">send us a mail</h4>
-					<form action="#" method="post" class="banner_form contact-inner-form">
+					<form id="contact_form" class="banner_form contact-inner-form">
 						<div class="contact-form-left contact-field1">
 							<div class="sec-left">
-								<label class="contact-form-text">Name</label>
-								<input placeholder="your name " name="first name" type="text" required="">
+								<label for="Name" class="contact-form-text">Name</label>
+								<input placeholder="your name " name="Name" type="text" id="Name" required="">
 							</div>
 							<div class="sec-right">
-								<label class="contact-form-text">Email</label>
-								<input placeholder="xxx@xx.com " name="first name" type="email" required="">
+								<label for="Email" class="contact-form-text">Email</label>
+								<input placeholder="xxx@xx.com " name="Email" type="text" id="Email" required="">
 							</div>
 						</div>
 						<div class="contact-form-right contact-field2">
-							<input type="submit" value="send message">
+							<input type="submit" value="Submit" >
 						</div>
 						<div class="clearfix"></div>
 						<div class="form-tx contact-field3">
-							<label class="contact-form-text">Address</label>
-							<textarea placeholder="your address" required=""></textarea>
+							<label for="Address" class="contact-form-text">Address</label>
+							<textarea placeholder="your address" name="Address" id="Address" required=""></textarea>
 						</div>
 					</form>
 				</div>
