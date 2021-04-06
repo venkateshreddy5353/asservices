@@ -132,7 +132,7 @@
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     cursor: pointer;
-    border: 2px solid #fff!important;
+    border: 2px solid rgb(3, 3, 3)!important;
 }
 .jislider__button.jislider__on {
     background: #fff!important;
