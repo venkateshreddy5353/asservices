@@ -1132,11 +1132,18 @@ h4.sub span {
     background: url(../images/29298.jpg) no-repeat center;
     background-size: cover;
     min-height: 750px;
+    max-width: 100%;
+    height: auto;
+    width: auto;
 }
 .banner-bg5 {
     background: url(../images/20892539.jpg) no-repeat center;
     background-size: cover;
     min-height: 1700px;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+
 }
 
 
