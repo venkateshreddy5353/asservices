@@ -1,7 +1,7 @@
 /****** JiSlider css ******/
 	#JiSlider {
 				width: auto;
-				height: auto;
+				height: 100%;
 			}
 .jislider ul {
 	height: 100%;
@@ -22,7 +22,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-size: cover;
+	background-size: auto;
 	background-position: center;
 	width: 100%;
 	height: 100%;
