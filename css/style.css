@@ -895,7 +895,7 @@ label.header span {
 }
 
 .banner-btm {
-    margin-top: 2%;
+    margin-top: -12%;
     margin-bottom: 3%;
 }
 
@@ -1136,8 +1136,8 @@ h4.sub span {
 }
 .banner-bg5 {
     background: url(../images/im1.jpg) no-repeat center;
-    background-size: cover;
-    min-height: 1700px;
+    background-size: auto;
+    min-height: 1000px;
     max-width:100%;
 
 }
